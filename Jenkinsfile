@@ -22,7 +22,7 @@ pipeline {
       steps {
           container("gcc8-armv7") {
             sh "pwd" 
-            sh 'ls /root/.conan'
+            sh 'ls /homme/conan/.conan'
             sh 'conan install . --install-folder=tmp --profile profiles/amrv7'
             sh "conan build . --build-folder=tmp"
           }

@@ -8,15 +8,14 @@ spec:
       tty: true
       resources:
       volumeMounts:
-       - name: tmp
-         mountPath: /root/.conan
+       - name: conan-cache
+         mountPath: /home/conan/.conan
     - name: gcc8-armv7
       image: conanio/gcc8-armv7
       command: ["cat"]
       tty: true
       volumeMounts:
-       - name: tmp
-         mountPath: /root/.conan
-  volumes:
-    - name: tmp
+       - name: conan-cache
+         mountPath: /home/conan/.conan
+    - name: conan-cache
 

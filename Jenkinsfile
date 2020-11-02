@@ -15,6 +15,8 @@ pipeline {
             sh "ls" 
             sh 'conan install . --install-folder=tmp --profile profiles/x86_64 --build=missing'
             sh "conan build . --build-folder=tmp"
+            sh "cd tmp/test/bin/ && ./GoogleTests"
+            sh 'rm -rf tmp'
             sh 'ls /home/conan/.conan'
           }
       }
@@ -26,6 +28,7 @@ pipeline {
             sh 'ls /home/conan/.conan'
             sh 'conan install . --install-folder=tmp --profile profiles/armv7 --build=missing'
             sh "conan build . --build-folder=tmp"
+            sh "cd tmp/test/bin/ && ./GoogleTests"
           }
       }
     }

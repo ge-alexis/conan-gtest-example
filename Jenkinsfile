@@ -24,7 +24,6 @@ pipeline {
           container("gcc8-armv7") {
             sh "pwd" 
             sh 'ls /home/conan/.conan'
-            sh 'sudo apt-get update && sudo apt-get -y install gcc-arm*'
             sh 'conan install . --install-folder=tmp --profile profiles/armv7 --build=missing'
             sh "conan build . --build-folder=tmp"
           }

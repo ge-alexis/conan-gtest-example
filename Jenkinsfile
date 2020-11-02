@@ -5,7 +5,7 @@ pipeline {
         }
   }
   options { 
-    //skipDefaultCheckout true
+    skipDefaultCheckout false
   }
   stages {
     stage('x64') {

@@ -15,6 +15,7 @@ pipeline {
             sh "ls" 
             sh 'conan install . --install-folder=tmp --profile profiles/x86_64'
             sh "conan build . --build-folder=tmp"
+            sh 'ls /home/conan/.conan'
           }
       }
     }
@@ -22,7 +23,7 @@ pipeline {
       steps {
           container("gcc8-armv7") {
             sh "pwd" 
-            sh 'ls /homme/conan/.conan'
+            sh 'ls /home/conan/.conan'
             sh 'conan install . --install-folder=tmp --profile profiles/amrv7'
             sh "conan build . --build-folder=tmp"
           }

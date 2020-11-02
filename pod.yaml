@@ -17,6 +17,10 @@ spec:
       volumeMounts:
        - name: conan
          mountPath: /home/conan/.conan
+    - name: arm32v7
+      image: arm32v7/debian
+      command: ["cat"]
+      tty: true
   volumes:
     - name: conan
   nodeSelector:

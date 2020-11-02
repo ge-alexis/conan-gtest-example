@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+spec:
+  containers:
+    - name: gcc8-x64
+      image: conanio/gcc8
+      command: ["cat"]
+      tty: true
+      resources:
+      volumeMounts:
+       - name: tmp
+         mountPath: /root/.conan
+    - name: gcc8-armv7
+      image: conanio/gcc8-armv7
+      command: ["cat"]
+      tty: true
+      volumeMounts:
+       - name: tmp
+         mountPath: /root/.conan
+  volumes:
+    - name: tmp
+

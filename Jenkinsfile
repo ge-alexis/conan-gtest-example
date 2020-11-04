@@ -44,7 +44,7 @@ pipeline {
       steps {
         container('shell') {
           powershell 'Get-ChildItem Env: | Sort Name'
-          powershell 'nuget --version'
+          powershell 'msbuild'
         }
       }
     }

@@ -46,7 +46,7 @@ pipeline {
           powershell 'Get-ChildItem Env: | Sort Name'
           powershell 'ls'
           powershell 'nuget'
-          powershell 'msbuild -h'
+          powershell 'dotnet -h'
         }
       }
     }

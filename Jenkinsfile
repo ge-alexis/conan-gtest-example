@@ -28,7 +28,6 @@ pipeline {
             sh 'ls -r /home/conan/.conan'
             sh 'conan install . --install-folder=tmp --profile profiles/armv7 --build=missing'
             sh "conan build . --build-folder=tmp"
-            sh "cd tmp/test/bin/ && ./GoogleTests"
           }
         /*  container("arm32v7") {
             sh "cd tmp/test/bin/ && ./GoogleTests"

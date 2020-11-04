@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: arm-deployment
+  labels:
+    app: arm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: arm
+  template:
+    metadata:
+      labels:
+        app: arm
+    spec:
+      containers:
+      - name: arm
+        image: arm32v7/debian

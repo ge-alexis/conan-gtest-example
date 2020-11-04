@@ -30,9 +30,23 @@ pipeline {
             sh "conan build . --build-folder=tmp"
             sh "cd tmp/test/bin/ && ./GoogleTests"
           }
-          container("arm32v7") {
+        /*  container("arm32v7") {
             sh "cd tmp/test/bin/ && ./GoogleTests"
           }
+          */
+      }
+    }
+    stage("windows") {
+      agent {
+        kubernetes {
+          yamlFile 'windows-pod.yaml'
+        }
+      }
+      steps {
+        container('shell') {
+          powershell 'Get-ChildItem Env: | Sort Name'
+          powershell 'nuget --version'
+        }
       }
     }
   }

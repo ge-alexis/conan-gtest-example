@@ -9,7 +9,8 @@ spec:
       windowsOptions:
         runAsUserName: "ContainerAdministrator"
   - name: shell
-    image: mcr.microsoft.com/powershell:preview-windowsservercore-1809
+    #image: mcr.microsoft.com/powershell:preview-windowsservercore-1809
+    image: mcr.microsoft.com/dotnet/framework/sdk:4.7.2-windowsservercore-ltsc2016
     resources:
     command:
     - powershell

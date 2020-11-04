@@ -3,7 +3,8 @@ kind: Pod
 spec:
   containers:
   - name: jnlp
-    image: jenkins/inbound-agent:windowsservercore-1809
+    #image: jenkins/inbound-agent:windowsservercore-1809
+    image: jenkins/inbound-agent:nanoserver-1809
   - name: shell
     image: mcr.microsoft.com/powershell:preview-windowsservercore-1809
     resources:

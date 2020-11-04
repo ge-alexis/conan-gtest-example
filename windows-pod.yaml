@@ -3,16 +3,19 @@ kind: Pod
 spec:
   containers:
   - name: jnlp
-    #image: jenkins/inbound-agent:windowsservercore-1809
-    image: jenkins/inbound-agent:nanoserver-1809
+    image: jenkins/inbound-agent:windowsservercore-1809
+    #image: jenkins/inbound-agent:nanoserver-1809
+    securityContext:
+      windowsOptions:
+        runAsUserName: "ContainerAdministrator"
   - name: shell
     image: mcr.microsoft.com/powershell:preview-windowsservercore-1809
     resources:
     command:
     - powershell
-    tty: true
     args:
     - Start-Sleep
     - 999999
+    tty: true
   nodeSelector:
     kubernetes.io/os: windows

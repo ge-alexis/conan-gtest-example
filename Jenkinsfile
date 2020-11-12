@@ -1,7 +1,7 @@
 pipeline {
   agent {
         kubernetes {
-          yamlFile 'pod.yaml'
+          yamlFile 'pod-templates/pod.yaml'
         }
   }
   options { 
@@ -38,7 +38,7 @@ pipeline {
     stage("windows") {
       agent {
         kubernetes {
-          yamlFile 'windows-pod.yaml'
+          yamlFile 'pod-templates/windows-pod.yaml'
         }
       }
       steps {

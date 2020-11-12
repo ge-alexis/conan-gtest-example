@@ -20,3 +20,8 @@ spec:
     tty: true
   nodeSelector:
     kubernetes.io/os: windows
+  tolerations:
+  - key: "os"
+    operator: "Equal"
+    value: "windows"
+    effect: "NoSchedule"
